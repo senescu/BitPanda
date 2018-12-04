@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" verbose="1" name="BitPanda Suite" annotations="JDK" parallel="false">
+
+
+    <test name="SignUp" parallel="false" >
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+    <test name="LogIn" parallel="false"  >
+        <classes>
+            <class name="tests.LogInTest"></class>
+        </classes>
+    </test>
+
+    <test name="BitPanda Suite">
+        <groups>
+            <run>
+                <include name="tests.LogInTest"/>
+                <include name="tests.SignUpTest"/>
+            </run>
+        </groups>
+    </test>
+</suite>
